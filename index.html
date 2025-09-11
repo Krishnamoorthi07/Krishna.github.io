@@ -128,6 +128,7 @@
                       </ul>
                     </li>
                     <li class="main-menu__item">
+                      
                       <div class="main-menu__toggle">
                         <span class="main-menu__link btn btn-anim">
                           <span class="btn-caption">Pages</span>
@@ -207,7 +208,7 @@
     <header id="header" class="mxd-header">
       <!-- header logo -->
       <div class="mxd-header__logo loading__fade">
-        <a href="index-main.html" class="mxd-logo">
+        <a href="index.html" class="mxd-logo">
           <!-- logo icon -->
           <svg class="mxd-logo__image" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 56 56" style="enable-background:new 0 0 56 56;" xml:space="preserve">
             <style type="text/css">
@@ -243,18 +244,28 @@
                 c0-0.5-0.4-0.9-0.9-0.9h-0.9c-0.5,0-0.9-0.4-0.9-0.9v-0.9c0-0.5,0.4-0.9,0.9-0.9h0.9C49,40.1,49.5,39.7,49.5,39.2L49.5,39.2z"/>
             </g>
           </svg>
-          <!-- logo text -->
-          <span class="mxd-logo__text">Krishnamoorthi</span>
+            <!-- logo text -->
+            <span class="mxd-logo__text logo-animate-hover animated-logo-text">krishnamoorthi</span>
+        
         </a>
       </div>
       <!-- header controls -->
       <div class="mxd-header__controls loading__fade">
         <button id="color-switcher" class="mxd-color-switcher" type="button" role="switch" aria-label="light/dark mode" aria-checked="true"></button>
-        <a class="btn btn-anim btn-default btn-mobile-icon btn-outline slide-right-up" href="contact.html">
+        <a class="btn btn-anim btn-default btn-mobile-icon btn-outline slide-right-up custom-orange-hover" href="contact.html">
           <span class="btn-caption">Hi Buddy!</span>
           <i class="ph-bold ph-arrow-up-right"></i>
         </a>
       </div>
+      <style>
+        .custom-orange-hover:hover,
+        .custom-orange-hover:focus {
+          background: #ff9800 !important;
+          color: #fff !important;
+          border-color: #ff9800 !important;
+          transition: background 0.2s, color 0.2s, border-color 0.2s;
+        }
+      </style>
     </header>
     <!-- Header End -->
 
@@ -267,7 +278,38 @@
           <div class="mxd-hero-09__wrap loading-wrap">
             <div class="mxd-hero-09__headline">
               <div class="hero-09-headline__caption loading__item">
-                <p>Building reliable backend solutions & modern digital experiences for the future.</p>
+                <p class="animated-caption">Building reliable backend solutions &amp; modern digital experiences for the future.</p>
+                <style>
+                .animated-caption {
+                  display: inline-block;
+                  font-size: 1.4rem;
+                  background: linear-gradient(90deg, #ff9800, #ff5e62, #ff9800 80%);
+                  background-size: 200% auto;
+                  color: #fff;
+                  background-clip: text;
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+                  animation: caption-gradient-move 3s linear infinite, caption-fade-in 1.2s cubic-bezier(.4,2,.6,1);
+                  letter-spacing: 1px;
+                  filter: drop-shadow(0 2px 12px #ff980088);
+                  margin-bottom: 0.5em;
+                }
+                @keyframes caption-gradient-move {
+                  0% { background-position: 0% 50%; }
+                  100% { background-position: 100% 50%; }
+                }
+                @keyframes caption-fade-in {
+                  from { opacity: 0; transform: translateY(20px) scale(0.96);}
+                  to { opacity: 1; transform: translateY(0) scale(1);}
+                }
+                .animated-caption:hover,
+                .animated-caption:focus {
+                  animation-play-state: paused;
+                  filter: drop-shadow(0 4px 24px #ff9800cc);
+                  transform: scale(1.06) rotate(-2deg);
+                  transition: filter 0.2s, transform 0.2s;
+                }
+                </style>
               </div>
               <div class="hero-09-headline__title loading__item">
 
@@ -330,6 +372,14 @@
                 <span class="tag tag-default tag-outline">3d modeling</span>
                 <span class="tag tag-default tag-outline">Video editing</span>
               </div>
+              <style>
+              .hero-09-headline__tags .tag:hover {
+                background: #ff9800 !important;
+                color: #fff !important;
+                border-color: #ff9800 !important;
+                transition: background 0.2s, color 0.2s, border-color 0.2s;
+              }
+              </style>
             </div>
             <div class="mxd-hero-09__objects">
               <div class="hero-09-objects__image loading__item">
@@ -359,7 +409,26 @@
             <div class="mxd-hero-09__more loading__fade">
               <a class="btn btn-line-default btn-anim slide-down" href="#projects">
                 <span class="btn-caption">Scroll for more</span>
-                <i class="ph-bold ph-arrow-elbow-right-down"></i>
+                <i class="ph-bold ph-arrow-elbow-right-down scroll-arrow-animated"></i>
+                <style>
+                  .scroll-arrow-animated {
+                  display: inline-block;
+                  transition: color 0.3s, transform 0.3s cubic-bezier(.4,2,.6,1);
+                  color: #ff9800;
+                  animation: bounce-down 1.2s infinite;
+                  }
+                  .btn.slide-down:hover .scroll-arrow-animated,
+                  .btn.slide-down:focus .scroll-arrow-animated {
+                  color: #fff;
+                  transform: translateY(6px) scale(1.2) rotate(-10deg);
+                  text-shadow: 0 2px 12px #ff980088;
+                  }
+                  @keyframes bounce-down {
+                  0%, 100% { transform: translateY(0);}
+                  30% { transform: translateY(8px);}
+                  60% { transform: translateY(0);}
+                  }
+                </style>
               </a>
             </div>
           </div>
@@ -396,8 +465,50 @@
                             <div class="col-12 mxd-grid-item no-margin">
                               <div class="mxd-section-title__controls anim-uni-in-up">
                                 <a class="btn btn-anim btn-default btn-outline slide-right-up" href="works-simple.html">
-                                  <span class="btn-caption">See All</span>
-                                  <i class="ph-bold ph-arrow-up-right"></i>
+                                  <span class="btn-caption see-all-animated">See All</span>
+                                  <style>
+                                    .see-all-animated {
+                                      display: inline-block;
+                                      transition: color 0.3s, transform 0.3s cubic-bezier(.4,2,.6,1), text-shadow 0.3s;
+                                      cursor: pointer;
+                                      position: relative;
+                                    }
+                                    .see-all-animated:hover,
+                                    .see-all-animated:focus {
+                                      color: #ff9800;
+                                      transform: scale(1.12) translateY(-2px) rotate(-2deg);
+                                      text-shadow: 0 2px 16px #ff980088;
+                                    }
+                                    .see-all-animated::after {
+                                      content: '';
+                                      display: block;
+                                      position: absolute;
+                                      left: 0; right: 0; bottom: -2px; height: 2px;
+                                      background: #ff9800;
+                                      border-radius: 1px;
+                                      transform: scaleX(0);
+                                      transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+                                      pointer-events: none;
+                                    }
+                                    .see-all-animated:hover::after,
+                                    .see-all-animated:focus::after {
+                                      transform: scaleX(1);
+                                    }
+                                  </style>
+                                  <span class="see-all-arrow-animated">
+                                    <i class="ph-bold ph-arrow-up-right"></i>
+                                  </span>
+                                  <style>
+                                    .see-all-arrow-animated i {
+                                      transition: transform 0.3s cubic-bezier(.4,2,.6,1), color 0.3s;
+                                    }
+                                    .see-all-animated:hover .see-all-arrow-animated i,
+                                    .see-all-animated:focus .see-all-arrow-animated i {
+                                      color: orange;
+                                      transform: translateX(6px) scale(1.2) rotate(-10deg);
+                                      text-shadow: 0 2px 12px #ff980088;
+                                    }
+                                  </style>
                                 </a>
                               </div>
                             </div>
@@ -412,53 +523,80 @@
                     <div class="mxd-pinned-projects__scroll-inner mxd-grid-item no-margin">
                       <!-- item -->
                       <div class="mxd-project-item">
-                        <a class="mxd-project-item__media anim-uni-in-up" href="project-details.html">
+                        <a class="mxd-project-item__media anim-uni-in-up" href="404.html">
                           <div class="mxd-project-item__preview preview-image-1 parallax-img-small">
                             <img src="img/illustrations/1200x1200_service-image-05.webp" alt="">
                           </div>
                           <div class="mxd-project-item__tags">
-                            <span class="tag tag-default tag-permanent">Grapic design</span>
-                            <span class="tag tag-default tag-permanent">Web design</span>
-                            <span class="tag tag-default tag-permanent">Development</span>
+                            <span class="tag tag-default tag-permanent custom-hover-tag">Grapic design</span>
+                            <span class="tag tag-default tag-permanent custom-hover-tag">Web design</span>
+                            <span class="tag tag-default tag-permanent custom-hover-tag">Development</span>
+                            <style>
+                              .custom-hover-tag:hover, .custom-hover-tag:focus {
+                                background: #ff9800 !important;
+                                color: #fff !important;
+                                border-color: #ff9800 !important;
+                                transition: background 0.2s, color 0.2s, border-color 0.2s;
+                                cursor: pointer;
+                              }
+                            </style>
                           </div>
                         </a>
                         <div class="mxd-project-item__promo">
                           <div class="mxd-project-item__name">
-                            <a class="anim-uni-in-up" href="project-details.html"><span>Rayo template</span> creative studio solution</a>
+                            <a class="anim-uni-in-up" href="404.html"><span>Create own  Designing</span> Creative Application</a>
                           </div>
                         </div>
                       </div>
                       <!-- item -->
                       <div class="mxd-project-item">
-                        <a class="mxd-project-item__media anim-uni-in-up" href="project-details.html">
+                        <a class="mxd-project-item__media anim-uni-in-up" href="404.html">
                           <div class="mxd-project-item__preview preview-image-7 parallax-img-small">
                             <img src="img/demo/01_comp-img.webp" alt="">
                           </div>
                           <div class="mxd-project-item__tags">
-                            <span class="tag tag-default tag-permanent">Midjourney</span>
-                            <span class="tag tag-default tag-permanent">Editorial</span>
+                            <span class="tag tag-default tag-permanent custom-hover-tag">Midjourney</span>
+                            <span class="tag tag-default tag-permanent custom-hover-tag">Editorial</span>
+                            <style>
+                              .custom-hover-tag:hover, .custom-hover-tag:focus {
+                                background: #ff9800 !important;
+                                color: #fff !important;
+                                border-color: #ff9800 !important;
+                                transition: background 0.2s, color 0.2s, border-color 0.2s;
+                                cursor: pointer;
+                              }
+                            </style>
                           </div>
                         </a>
                         <div class="mxd-project-item__promo">
                           <div class="mxd-project-item__name">
-                            <a class="anim-uni-in-up" href="project-details.html"><span>AI experiments</span> themed illustrations series</a>
+                            <a class="anim-uni-in-up" href="404.html"><span>AI experiments</span> themed illustrations series</a>
                           </div>
                         </div>
                       </div>
                       <!-- item -->
                       <div class="mxd-project-item">
-                        <a class="mxd-project-item__media anim-uni-in-up" href="project-details.html">
+                        <a class="mxd-project-item__media anim-uni-in-up" href="404.html">
                           <div class="mxd-project-item__preview preview-image-4 parallax-img-small">
                             <img src="img/illustrations/800x800_card-image-03.webp" alt="">
                           </div>
                           <div class="mxd-project-item__tags">
-                            <span class="tag tag-default tag-permanent">UI/UX</span>
-                            <span class="tag tag-default tag-permanent">Mobile</span>
+                            <span class="tag tag-default tag-permanent custom-hover-tag">UI/UX</span>
+                            <span class="tag tag-default tag-permanent custom-hover-tag">Mobile</span>
+                            <style>
+                              .custom-hover-tag:hover, .custom-hover-tag:focus {
+                                background: #ff9800 !important;
+                                color: #fff !important;
+                                border-color: #ff9800 !important;
+                                transition: background 0.2s, color 0.2s, border-color 0.2s;
+                                cursor: pointer;
+                              }
+                            </style>
                           </div>
                         </a>
                         <div class="mxd-project-item__promo">
                           <div class="mxd-project-item__name">
-                            <a class="anim-uni-in-up" href="project-details.html"><span>Delivery service</span> mobile app design</a>
+                            <a class="anim-uni-in-up" href="404.html"><span>Delivery service</span> mobile app design</a>
                           </div>
                         </div>
                       </div>
@@ -558,7 +696,7 @@
                         </a>
                       </div>
                       <div class="mxd-services-stack__title width-60">
-                        <h3 class="opposite">Krishnamoorthi Art and graphic design</h3>
+                        <h3 class="opposite">Krishnamoorthi Art and Graphic Design</h3>
                       </div>
                       <div class="mxd-services-stack__info width-60">
                         <div class="mxd-services-cards__tags">
@@ -685,12 +823,34 @@
                         visually stunning and seamlessly functional websites.</p>
                       <div class="mxd-manifest__controls anim-uni-in-up">
                         <div class="mxd-btngroup centered">
-                          <a class="btn btn-anim btn-default btn-accent slide-right-up" href="works-masonry.html">
-                            <span class="btn-caption">My Works</span>
+                          <a class="btn btn-anim btn-default btn-accent slide-right-up" href="works-simple.html">
+                            <span class="btn-caption my-works-hover">My Works</span>
+                            <style>
+                              .my-works-hover {
+                                transition: color 0.3s, text-shadow 0.3s;
+                                cursor: pointer;
+                              }
+                              .my-works-hover:hover,
+                              .my-works-hover:focus {
+                                color: #ff9800;
+                                text-shadow: 0 2px 16px #ff980088;
+                              }
+                            </style>
                             <i class="ph-bold ph-arrow-up-right"></i>
                           </a>
                           <a class="btn btn-anim btn-default btn-outline slide-down" href="img/Resume/ProfessionalResume .pdf">
-                            <span class="btn-caption">Download CV</span>
+                            <span class="btn-caption download-cv-hover">Download CV</span>
+                            <style>
+                              .download-cv-hover {
+                                transition: color 0.3s, text-shadow 0.3s;
+                                cursor: pointer;
+                              }
+                              .download-cv-hover:hover,
+                              .download-cv-hover:focus {
+                                color: #ff9800;
+                                text-shadow: 0 2px 16px #ff980088;
+                              }
+                            </style>
                             <i class="ph-bold ph-arrow-down"></i>
                           </a>
                         </div>
@@ -723,7 +883,7 @@
                   <use xlink:href="#textPath" fill="none"></use>
                   <text>
                     <!-- button text here!!! -->
-                    <textPath xlink:href="#textPath">Let's start new project * Let's start new project * </textPath>
+                    <textPath xlink:href="#textPath">Let's start new project *  </textPath>
                   </text>
                 </g>
               </svg>
@@ -762,8 +922,37 @@
                   </div>
                   <div class="col-12 col-xl-3 mxd-grid-item no-margin">
                     <div class="mxd-section-title__hrcontrols anim-uni-in-up">
-                      <a class="btn btn-anim btn-default btn-outline slide-right-up" href="blog-standard.html">
-                        <span class="btn-caption">All Articles</span>
+                      <a class="btn btn-anim btn-default btn-outline slide-right-up" href="404.html">
+                        <span class="btn-caption all-articles-animated">All Articles</span>
+                        <style>
+                          .all-articles-animated {
+                            display: inline-block;
+                            transition: color 0.3s, transform 0.3s cubic-bezier(.4,2,.6,1), text-shadow 0.3s;
+                            cursor: pointer;
+                            position: relative;
+                          }
+                          .all-articles-animated:hover,
+                          .all-articles-animated:focus {
+                            color: #ff9800;
+                            transform: scale(1.12) translateY(-2px) rotate(-2deg);
+                            text-shadow: 0 2px 16px #ff980088;
+                          }
+                          .all-articles-animated::after {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            left: 0; right: 0; bottom: -2px; height: 2px;
+                            background: #ff9800;
+                            border-radius: 1px;
+                            transform: scaleX(0);
+                            transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+                            pointer-events: none;
+                          }
+                          .all-articles-animated:hover::after,
+                          .all-articles-animated:focus::after {
+                            transform: scaleX(1);
+                          }
+                        </style>
                         <i class="ph-bold ph-arrow-up-right"></i>
                       </a>
                     </div>
@@ -900,7 +1089,38 @@
         <div class="fullwidth-text__tl-trigger"></div>
         <div class="mxd-footer__fullwidth-text personal anim-top-to-bottom">
           <div class="mxd-footer__text">
-            <h1 class="mxd-footer__text-content">Krishna</h1>
+            <h1 class="mxd-footer__text-content animated-footer-text">Krishna</h1>
+          </div>
+          <style>
+          .animated-footer-text {
+            display: inline-block;
+            font-size: 3rem;
+            background: linear-gradient(90deg, #ff9800, #ff5e62, #ff9800 80%);
+            background-size: 200% auto;
+            color: #fff;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: footer-gradient-move 3s linear infinite, footer-fade-in 1.2s cubic-bezier(.4,2,.6,1);
+            letter-spacing: 2px;
+            filter: drop-shadow(0 2px 16px #ff980088);
+          }
+          @keyframes footer-gradient-move {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+          }
+          @keyframes footer-fade-in {
+            from { opacity: 0; transform: translateY(40px) scale(0.95);}
+            to { opacity: 1; transform: translateY(0) scale(1);}
+          }
+          .animated-footer-text:hover,
+          .animated-footer-text:focus {
+            animation-play-state: paused;
+            filter: drop-shadow(0 4px 32px #ff9800cc);
+            transform: scale(1.08) rotate(-2deg);
+            transition: filter 0.2s, transform 0.2s;
+          }
+          </style>
           <!-- <svg class="mxd-footer__svg-v2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 518 72" style="enable-background:new 0 0 518 72;" xml:space="preserve">
           <path d="M18.9,71.9C13,71.9,8.4,70.5,5,67.6c-3.4-2.9-5-6.7-5-11.4c0-5,1.7-8.8,5.1-11.5c3.4-2.7,8.3-4.1,14.8-4.1h15.5v-2
